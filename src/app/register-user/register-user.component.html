@@ -66,9 +66,9 @@
       </div>
       <div class="form-group">
       <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Conform Password</label>
-        <input formControlName="cpassword" type="password" class="form-control" placeholder="Conform Password" id="cpassword" name="cpassword" [(ngModel)]="user.cpassword" >
-        <small *ngIf="cpassword.invalid && cpassword.touched" class="text-danger">Conform Password is Required</small>
+        <label for="exampleFormControlInput1" class="form-label">Confirm Password</label>
+        <input formControlName="cpassword" type="password" class="form-control" placeholder="Confirm Password" id="cpassword" name="cpassword" [(ngModel)]="user.cpassword" >
+        <small *ngIf="cpassword.invalid && cpassword.touched" class="text-danger">Confirm Password is Required</small>
       </div>
     </div>
     <div class="form-group">
@@ -82,13 +82,13 @@
      <div class="mb-3">
       <label for="exampleFormControlInput1" class="form-label">CARD TYPE</label>
       <div class="form-check">
-        <input formControlName="cardtype" class="form-check-input" type="radio" name="cardtype" id="gold" value="gold" [(ngModel)]="user.cardtype">
+        <input formControlName="cardtype" class="form-check-input" type="radio" name="cardType" id="gold" value="gold" [(ngModel)]="user.cardType">
         <label class="form-check-label" for="exampleRadios1">
           Gold
         </label>
       </div>
       <div class="form-check">
-        <input formControlName="cardtype" class="form-check-input" type="radio" name="cardtype" id="Titanium" value="Titanium" [(ngModel)]="user.cardtype">
+        <input formControlName="cardtype" class="form-check-input" type="radio" name="cardType" id="Titanium" value="Titanium" [(ngModel)]="user.cardType">
         <label class="form-check-label" for="exampleRadios2">
         Titanium
         </label>
@@ -112,7 +112,7 @@
     <div class="form-group">
      <div class="mb-3">
       <label for="exampleFormControlInput1" class="form-label">Savings Account No:</label>
-      <input formControlName="accountNo" type="number" class="form-control" placeholder="Saving Account No" id="accountNo" name="accountNo" [(ngModel)]="user.accountNo">
+      <input formControlName="accountNo" type="text" class="form-control" placeholder="Saving Account No" id="accountNo" name="accountNo" [(ngModel)]="user.accountNo">
       <small *ngIf="accountNo.invalid && accountNo.touched" class="text-danger">Saving Account No is Required</small>
     </div>
      </div>

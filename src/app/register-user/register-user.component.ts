@@ -40,8 +40,12 @@ export class RegisterUserComponent implements OnInit {
 
   userRegister(){
     console.log(this.user);
+    if(this.user.password!=this.user.cpassword){
+      alert("Password and Confirm Password is matching. Please Enter correct Password");
+      return;
+    }
     this.registerService.registerUser(this.user).subscribe(data=>{
-     alert("Successfully User is register?")
+     alert("User Registered successfully");
      this.exform.reset();
      this.router.navigate(['login'])
     },error=>alert("Sorry User not register"));

@@ -19,39 +19,40 @@ export class ForgotpasswordComponent implements OnInit {
   public sendOtp():any{
     // this.username= document.getElementById("username").nodeValue;
     this.otpScreen=true;
-    alert("sendsOtp called"+this.user.userName);
-    console.log(this.user)
     this.forgotservice.sendOtp(this.user).subscribe(data=>{
-      alert("login Successfully")
+      //alert("login Successfully")
       // this.sendOtp.reset();
       //this.router.navigate(['changep'])
-      this.otpScreen=false;
-    },error=>alert("sorry Please enter correct username"));
+      alert(data['data']);
+      this.otpScreen=true;
+    },error=>{
+      this.otpScreen=true;
+      console.log(error);
+      alert(error['error']['message']);
+    });
   }
 
   verifyOtp(){
-    this.otpScreen=false;
-    console.log(this.user)
     this.forgotservice.validateOtp(this.user).subscribe(data=>{
-      alert("login Successfully")
-      // this.sendOtp.reset();
-      //this.router.navigate(['changep'])
       this.otpScreen=false;
-    },error=>alert("sorry Please enter correct username"));
-    console.log("Arjun jai");
+      alert(data['data']);
+    },error=>{
+      this.otpScreen=true;
+      alert(error['error']['message']);
+    });
   }
 
  passwordUpdate(){
-  // this.username= document.getElementById("username").nodeValue;
-    this.otpScreen=false;
-    console.log(this.user)
+  if(this.user.password!=this.user.cpassword){
+    alert("Password and Confirm Password is matching. Please Enter correct Password");
+    return;
+  }
     this.forgotservice.updatePassword(this.user).subscribe(data=>{
-      alert("updated Successfully")
-      // this.sendOtp.reset();
-      //this.router.navigate(['changep'])
-      this.otpScreen=false;
-    },error=>alert("sorry Please enter correct username"));
-    console.log("hideOtpScreen Arjun jai");
+      alert(data['data']);
+      this.router.navigate(['login'])
+    },error=>{
+      alert(error['error']['message']);
+    });
   }
   
 }

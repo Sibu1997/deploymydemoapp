@@ -23,12 +23,14 @@ public loginForm!: FormGroup
   }
 
   userLogin(){
-    console.log(this.user)
+    //console.log(this.user)
     this.loginuserservice.loginUser(this.user).subscribe(data=>{
       alert("login Successfully")
       this.loginForm.reset();
       this.router.navigate(['dashbord'])
-    },error=>alert("sorry Please enter correct userId and Password"));
+    },error=>{
+      alert(error['error']['message']);
+    });
   }
   }
 

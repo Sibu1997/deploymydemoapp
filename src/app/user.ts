@@ -11,7 +11,9 @@ export class User {
     accountNo!:string;
     password!:string;
     cpassword!:string;
-    cardtype!:string;
+    cardType!:string;
     ifsc!:string;
     dob!:string;
+    otp!:string;
+    status!:string;
 }

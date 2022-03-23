@@ -14,6 +14,7 @@ import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { TermsconditionComponent } from './termscondition/termscondition.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { ChangepasswordComponent } from './changepassword/changepassword.component';
+import { VarifyComponent } from './varify/varify.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ChangepasswordComponent } from './changepassword/changepassword.compone
     AdminloginComponent,
     TermsconditionComponent,
     ForgotpasswordComponent,
-    ChangepasswordComponent
+    ChangepasswordComponent,
+    VarifyComponent
   ],
   imports: [
     BrowserModule,
