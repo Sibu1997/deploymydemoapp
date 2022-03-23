@@ -1,0 +1,38 @@
+
+  <table >
+      <tr>
+          <th >Admin Page</th> 
+      </tr>
+  <table style="width:100%" border="5" class="center">
+      <tr>
+        <th>Users Details Database</th> 
+      </tr>
+<tr>  
+   <th>Customer Name</th>
+  <th>Customer Id</th>
+  <th>Bank Id</th>
+  <!-- <th>DOB</th> -->
+  <th>CardType</th>
+  <!-- <th>Remaining Credits</th>
+  <th>Valid Date</th> --> 
+  <th>IFSC Code</th>
+  <!-- <th>Account Number</th> -->
+  <th>Balance</th>
+  <!-- <th>Status</th> -->
+  <th>Edit</th>
+  <th>Delete</th>
+  <!-- <th>Activate user</th> -->
+    </tr>
+
+  <tr *ngFor="let user of users">
+    <p>Hello</p>
+    <td>{{user.name}}</td>
+    <td>{{user.userName}}</td>
+    <td>{{user.email}}</td>
+    <td>{{user.dob}}</td>
+    <td>{{user.email}}</td>
+    <td>{{user.bank}}</td>
+    <td>{{user.accountNo}}</td>
+</tr>
+</table>
+</table>

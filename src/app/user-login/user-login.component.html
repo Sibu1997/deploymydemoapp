@@ -1,0 +1,53 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Finance</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        
+         <ul class="nav justify-content-end">
+            <li class="nav-item">
+              <button type="button" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="left" title="Tooltip on left" [routerLink]="['/index']">Home</button>
+            </li>
+          <li class="nav-item">
+          <button type="button" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right" [routerLink]="['/adminlogin']">Admin Login</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <div class="p-3 mb-2 bg-success text-white">
+  <div class="container col-md-6">
+      <h1 style="color: red;">Customer Login</h1>
+      <form [formGroup]="loginForm" (ngSubmit)="userLogin()">
+          <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">UserName</label>
+              <input type="text" formControlName="userName" [(ngModel)]="user.userName" class="form-control" placeholder="UserName" id="userName" name="userName" required>
+              <span class="text-danger" *ngIf="loginForm.controls['userName'].dirty && loginForm.hasError('required','userName')">UserName is required</span>
+            </div>
+  
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Password</label>
+              <input formControlName="password"type="password" [(ngModel)]="user.password" class="form-control" placeholder="Password" id="password" name="password" required>
+              <span class="text-danger" *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required','password')">Password is required</span>
+            </div>
+            
+              <label>
+                <input  type="checkbox" checked="checked" name="remember"> Remember me
+              </label>
+            
+            <div class="mb-3">
+              <div style="text-align: right;"><a [routerLink]="['/forgot']">Forgot Password?</a></div>
+            <button style="text-align: left;" type="submit" [disabled]="!loginForm.valid" class="btn btn-primary">Login</button></div>
+           
+          <div class="mb-3">
+            <div style="text-align: left;">
+            <label><span class="psw">New User<a [routerLink]="['/register']">Register Here?</a></span></label>
+          </div>
+        </div>
+      </form>
+  
+  </div>
+  </div>

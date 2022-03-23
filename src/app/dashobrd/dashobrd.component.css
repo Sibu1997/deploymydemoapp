@@ -1,0 +1,33 @@
+.box{
+    height:200px;
+    width:200px;
+    border:3px solid;
+    content: center;
+    color: black;
+    margin-left:650px;
+
+}
+.box1{
+   
+    border:3px solid;
+    background-color: lightgreen;
+    text-align: center;
+    
+    color: black;
+
+}
+.box2{
+    height: 100%;
+   width: 100%;
+   
+   background-size:cover;
+    border:3px solid;
+    background-image: url("https://img.freepik.com/free-vector/3d-dollar-coin-money-financial-online-shopping-online-payment-dollar-coin-with-payment-protection-3d-vector-render-business-finance-online-banking-online-shopping-security_412828-668.jpg?size=626&ext=jpg");
+    color:black;
+}
+.box3{
+    height: 30px;
+    width: 120px;
+    border:2px solid;
+}
+

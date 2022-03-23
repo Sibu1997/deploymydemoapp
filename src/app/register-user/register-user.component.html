@@ -1,0 +1,131 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Finance</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+       <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <button type="button" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="left" title="Tooltip on left"[routerLink]="['/index']">Home</button>
+          </li>
+        <li class="nav-item">
+        <button type="button" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right" [routerLink]="['/login']">Login</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="p-3 mb-2 bg-success text-white">
+<div class="container col-md-6">
+    <h1 style="color: red;">Customer Registration</h1>
+     <form [formGroup]="exform" (ngSubmit)="userRegister()">
+      <div class="form-group">
+       <div class="mb-3">
+         <label for="exampleFormControlInput1" class="form-label">Name</label>
+         <input formControlName="name" type="text" class="form-control" placeholder="Name" id="name" name="name" [(ngModel)]="user.name" >
+         <small *ngIf="name.invalid && name.touched" class="text-danger">Name is Required</small>
+        </div> 
+       </div>
+       <div class="form-group">
+       <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Date of Birth</label>
+        <input formControlName="dob" type="text" class="form-control" placeholder="Date of Birth" id="dob" name="dob" [(ngModel)]="user.dob" >
+        <small *ngIf="dob.invalid && dob.touched" class="text-danger">Date of Birth is Required</small>
+      </div>
+      </div>
+      <div class="form-group">
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Email</label>
+        <input formControlName="email" type="email" class="form-control" placeholder="Email" id="email" name="email" [(ngModel)]="user.email" >
+        <small *ngIf="email.invalid && email.touched" class="text-danger">Email is Required</small>
+      </div>
+      </div>
+      <div class="form-group">
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Phone No</label>
+        <input formControlName="phone" type="text" class="form-control" placeholder="Phone No" id="phone" name="phone" [(ngModel)]="user.phone">
+        <small *ngIf="phone.invalid && phone.touched" class="text-danger">Phone is Required</small>
+      </div>
+       </div>
+       <div class="form-group">
+       <div class="mb-3">
+         <label for="exampleFormControlInput1" class="form-label">UserName</label>
+         <input formControlName="userName" type="text" class="form-control" placeholder="UserName" id="userName" name="userName" [(ngModel)]="user.userName" >
+         <small *ngIf="userName.invalid && userName.touched" class="text-danger">UserName is Required</small>
+       </div>
+       </div>
+       <div class="form-group">
+       <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Password</label>
+        <input formControlName="password" type="password" class="form-control" placeholder="Password" id="password" name="password" [(ngModel)]="user.password" >
+        <small *ngIf="password.invalid && password.touched" class="text-danger">Password is Required</small>
+      </div>
+      </div>
+      <div class="form-group">
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Conform Password</label>
+        <input formControlName="cpassword" type="password" class="form-control" placeholder="Conform Password" id="cpassword" name="cpassword" [(ngModel)]="user.cpassword" >
+        <small *ngIf="cpassword.invalid && cpassword.touched" class="text-danger">Conform Password is Required</small>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="mb-3">
+       <label for="exampleFormControlInput1" class="form-label">Address</label>
+       <input formControlName="address" type="address" class="form-control" placeholder="Address" id="address" name="address" [(ngModel)]="user.address">
+       <small *ngIf="address.invalid && address.touched" class="text-danger">Address is Required</small>
+     </div>
+    </div>
+    <div class="form-group">
+     <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">CARD TYPE</label>
+      <div class="form-check">
+        <input formControlName="cardtype" class="form-check-input" type="radio" name="cardtype" id="gold" value="gold" [(ngModel)]="user.cardtype">
+        <label class="form-check-label" for="exampleRadios1">
+          Gold
+        </label>
+      </div>
+      <div class="form-check">
+        <input formControlName="cardtype" class="form-check-input" type="radio" name="cardtype" id="Titanium" value="Titanium" [(ngModel)]="user.cardtype">
+        <label class="form-check-label" for="exampleRadios2">
+        Titanium
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="mb-3">
+     <label for="exampleFormControlInput1" class="form-label">Select Bank</label>
+     <small *ngIf="bank.invalid && bank.touched" class="text-danger">Phone is Required</small>
+     <select formControlName="bank" class="form-select form-select-lg mb-3" name="bankus" placeholder="Select Bank" id="bankus" [(ngModel)]="user.bank" aria-label=".form-select-lg example" aria-placeholder="select bank">
+      <option selected>Open this select menu</option>
+      <option value="HDFC">HDFC</option>
+      <option value="ICICI">ICICI</option>
+      <option value="YES">YES</option>
+      <option value="BOI">BOI</option>
+      <option value="SBI">SBI</option>
+    </select>
+    </div>
+    </div>
+    <div class="form-group">
+     <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Savings Account No:</label>
+      <input formControlName="accountNo" type="number" class="form-control" placeholder="Saving Account No" id="accountNo" name="accountNo" [(ngModel)]="user.accountNo">
+      <small *ngIf="accountNo.invalid && accountNo.touched" class="text-danger">Saving Account No is Required</small>
+    </div>
+     </div>
+     <div class="form-group">
+       <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">IFSC Code</label>
+        <input formControlName="ifsc" type="text" class="form-control" placeholder="IFSC Code" id="ifsc" name="ifsc" [(ngModel)]="user.ifsc">
+        <small *ngIf="ifsc.invalid && ifsc.touched" class="text-danger">Ifsc is Required</small>
+      </div>
+     </div>
+     <button [disabled]="exform.invalid" type="submit" class="btn btn-primary">Register</button>
+     </form>
+   </div>
+</div>     
+
+
