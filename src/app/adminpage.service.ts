@@ -12,7 +12,7 @@ export class AdminpageService {
  
   getUser() : Observable<object>
   {
-    return this.httpClient.get("http://localhost:8081/user/al");
+    return this.httpClient.get("http://localhost:8081/user/all");
   }
 
 }

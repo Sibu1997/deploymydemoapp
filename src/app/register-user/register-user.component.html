@@ -32,7 +32,7 @@
        <div class="form-group">
        <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label">Date of Birth</label>
-        <input formControlName="dob" type="text" class="form-control" placeholder="Date of Birth" id="dob" name="dob" [(ngModel)]="user.dob" >
+        <input formControlName="dob" type="date" class="form-control" placeholder="Date of Birth" id="dob" name="dob" [(ngModel)]="user.dob" >
         <small *ngIf="dob.invalid && dob.touched" class="text-danger">Date of Birth is Required</small>
       </div>
       </div>

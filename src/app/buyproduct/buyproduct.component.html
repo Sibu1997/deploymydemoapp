@@ -9,9 +9,11 @@
     <img src="https://d2d22nphq0yz8t.cloudfront.net/88e6cc4b-eaa1-4053-af65-563d88ba8b26/https://media.croma.com/image/upload/v1616501861/Croma%20Assets/Communication/Mobiles/Images/233739_ekcv2z.png/mxw_2048,f_auto" class="image1">
 </div>
 <div class="margin">
-    <p>PRODUCT NAME: REDMI Mobile</p>
-    <p>PRODUCT DETAILS:  Note 10</p>
-    <p>COST:Rs.1000/-</p>
+
+    <p>{{productId}}</p>
+    <p>{{productName}}</p>
+    <p>{{productdecs}}</p>
+    <p>{{productCost}}</p>
 </div>
     </div>
 
@@ -23,15 +25,15 @@
 <div style="margin-top:50px">
     <label for="time period">Choose a EMI period:</label>
 
-    <select name="time period" id="time period">
-    <option value="3 months">3 Months</option>
-    <option value="5 Months">5 Months</option>
-    <option value="8 Months">8 Months</option>
-    <option value="10 Months">10 Months</option>
+    <select name="time period" id="time period" (change)="calculateEmi($event.target);">
+    <option value="3">3 Months</option>
+    <option value="6">6 Months</option>
+    <option value="9">9 Months</option>
+    <option value="12">1 Year</option>
     </select>
 </div>
 <div style="margin-top:50px">
-   <p> EMI STARTING 6000PM</p>
+   <p> EMI STARTING {{emiAmount}} PM</p>
 </div>
 <div style="margin-top:50px">
    <button>PAY NOW</button>

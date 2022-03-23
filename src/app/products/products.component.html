@@ -22,18 +22,18 @@
 
 
 <div class="margin">
-<div class="d-flex flex-row">
+<div class="d-flex flex-row" *ngFor="let product of products">
     <div>
     <img src="https://d2d22nphq0yz8t.cloudfront.net/88e6cc4b-eaa1-4053-af65-563d88ba8b26/https://media.croma.com/image/upload/v1616501861/Croma%20Assets/Communication/Mobiles/Images/233739_ekcv2z.png/mxw_2048,f_auto" class="image">
     </div>
      <div>
-    <p>Product Name:REDMI Mobile</p>
-    <p>Product Details: Note 10</p>
-    <p>Cost:Rs.1000/-</p>
-    <button>Buy Now</button>
+    <p>{{product.productName}}</p>
+    <p>{{product.productDescription}}</p>
+    <p>Cost:Rs. {{product.productPrice}} </p>
+    <button [routerLink]="'buyproduct/'+product.id">Buy Now</button>
 </div>
 </div>
-<div class="d-flex flex-row">
+<!--<div class="d-flex flex-row">
     <div>
     <img src="https://techstory.in/wp-content/uploads/2021/06/apple-iphone-x-new-1.jpg" class="image">
     </div>
@@ -41,7 +41,7 @@
     <p>Product Name:Apple Mobile</p>
     <p>Product Details: Iphone 12</p>
     <p>Cost:Rs.60000/-</p>
-    <button>Buy Now</button>
+    <button [routerLink]="['/buyproduct']">Buy Now</button>
 </div>
 
 </div>
@@ -54,8 +54,8 @@
     <p>Product Details: FHD FLAT TV N 5000 series 5</p>
     <p>Cost:Rs.35000/-</p>
     <button>Buy Now</button>
-</div>
+</div> 
 
-</div>
+</div>-->
 </div>
 

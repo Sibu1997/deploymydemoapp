@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'login' , component: UserLoginComponent},
   { path: 'register' , component: RegisterUserComponent},
   { path: 'products' , component: ProductsComponent},
-  { path: 'buyproduct' , component: BuyproductComponent},
+  { path: 'products/buyproduct/:id' , component: BuyproductComponent},
   { path: 'index' , component: IndexComponent},
   { path: 'dashbord' , component: DashobrdComponent},
   { path: 'adminpage' , component: AdminpageComponent},

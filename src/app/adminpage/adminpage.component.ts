@@ -12,10 +12,11 @@ export class AdminpageComponent implements OnInit {
   constructor(private adminpageservice: AdminpageService) { }
 
   ngOnInit(): void {
+    this.getUser();
   }
   getUser(){
     this.adminpageservice.getUser().subscribe(data=>{
-      this.users=data
+      this.users=data['data'];
    } ,error=>alert(" userdetails are not available"));
    
   }

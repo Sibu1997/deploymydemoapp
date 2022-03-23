@@ -25,6 +25,7 @@ public loginForm!: FormGroup
   userLogin(){
     //console.log(this.user)
     this.loginuserservice.loginUser(this.user).subscribe(data=>{
+      localStorage.setItem("logged-username", this.user.userName);
       alert("login Successfully")
       this.loginForm.reset();
       this.router.navigate(['dashbord'])

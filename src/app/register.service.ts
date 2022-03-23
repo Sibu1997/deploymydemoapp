@@ -15,4 +15,12 @@ export class RegisterService {
      console.log(user);
      return this.httpClient.post(`${this.baseUrl}`,user);
   }
+
+  getProducts(): Observable<Object> {
+    return this.httpClient.get("http://localhost:8081/utility/get/product-list");
+ }
+
+ getProduct(productId:any): Observable<Object> {
+  return this.httpClient.get("http://localhost:8081/utility/get/product?productId="+productId);
+}
 }
