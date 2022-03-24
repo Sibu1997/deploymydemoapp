@@ -123,7 +123,7 @@
         <small *ngIf="ifsc.invalid && ifsc.touched" class="text-danger">Ifsc is Required</small>
       </div>
      </div>
-     <button [disabled]="exform.invalid" type="submit" class="btn btn-primary">Register</button>
+     <button [disabled]="!user.name || !user.dob || !user.email || !user.phone || !user.userName || !user.password || !user.cpassword || !user.address || !user.cardType || !user.bank ||!user.accountNo ||!user.ifsc" type="submit" class="btn btn-primary">Register</button>
      </form>
    </div>
 </div>     

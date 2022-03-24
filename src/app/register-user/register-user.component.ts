@@ -9,7 +9,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./register-user.component.css']
 })
 export class RegisterUserComponent implements OnInit {
-
   user:User =new User();
   public exform: FormGroup;
   constructor(private registerService: RegisterService, private router: Router) { }
