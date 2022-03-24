@@ -13,57 +13,55 @@
             </li>
           
         </ul>
+        <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <button type="button" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="left" title="Tooltip on left"[routerLink]="['/index']">Logout</button>
+          </li>
+        
+      </ul>
       </div>
     </div>
   </nav>
   
 <div class="box2">
     <h2 style="text-align:center">DashBoard</h2>
-    <div class="box">
-        <label class="name"><b>CARD NUMBER</b></label>
-        <input class="padding_textbox" type="text" placeholder="Card Number" name="Name" required>
-        <label  for="name"><b>Name</b></label>
-        <input class="padding_textbox" type="text" placeholder="Enter Name" name="Name" required>
-    <label  for="Phone number"><b>Valid till</b></label>
-        <input class="padding_textbox" type="text" placeholder="MM/YY" name="Phone number" required>
-        <label  for="Card Type"><b>cardtype</b></label>
-    
-        <input type="radio" id="gold" name="type" value="Gold">
-    <label for="html">GOLD</label>
-    <input type="radio" id="titanium" name="type" value="Titanium">
-    <label for="html">Titanium</label>
-    
+    <div class="box" width="300px">
+        <label class="name"><b>CARD Number:{{cardNumber}}</b></label><br> 
+        <label  for="name"><b>Name :{{name}}</b></label><br>
+    <label  for="Phone number"><b>Valid till :{{vaildTill}}</b></label><br>
+        <label  for="Card Type"><b>CardType :{{cardType}}</b></label><br>
     <h4 class="box1">ACTIVATED</h4> 
     </div>
     <div style="padding:10px">
-    <p>TOTAL CREDIT:40,000</p>
-    <P>CREDIT USED:</P>
-    <P>REMAINING CREDIT:</P>
+      <p><b>TOTAL CREDIT:</b> {{totalCredit}}</p>
+      <p><b>CREDIT USED:</b> {{creditUsed}}</p>
+      <p><b>REMAINING CREDIT:</b> {{remainingCredit}}</p>
+
     </div>
     <div style="text-align:center">
         
-    <P>PRODUCTS PURCHASED</P>
-    <P>AMOUNT:</P>
+    <P><b>PRODUCTS PURCHASED</b></P>
+    <P><b>AMOUNT: </b>{{amount}}</P>
     </div>
     <div style="padding:10px">
-    <P>PRODUCT NAME:</P>
-    <P>PAID:15,000</P>
-    <P>BALANCE:25,000</P>
+    <P><b>PRODUCT NAME: </b>{{productName}}</P>
+    <P><b>PAID: </b>{{paid}}</P>
+    <P><b>BALANCE: </b>{{balance}}</P>
     </div>
     <div style="padding:20px">
     <p>RECENT TRANSACTIONS</p>
     </div>
     <div>
-    <table style="margin-left:400px">
+    <table style="margin-left:100px;width: 700px;">
         <tr>
           <th style="border:1px solid white;width:15%;height:50px">PRODUCT</th>
           <th style="border:1px solid white;width:15%;height:50px">DATE</th>
           <th style="border:1px solid white;width:15%;height:50px">AMOUNT PAID</th>
         </tr>
-        <tr>
-            <th style="border:1px solid white;width:15%;height:50px"></th>
-            <th style="border:1px solid white;width:15%;height:50px"></th>
-            <th style="border:1px solid white;width:15%;height:50px"></th>
+        <tr *ngFor="let trans of transactionList">
+            <td style="border:1px solid white;width:15%;height:50px">{{trans.productName}}</td>
+            <td style="border:1px solid white;width:15%;height:50px">{{trans.date}}</td>
+            <td style="border:1px solid white;width:15%;height:50px">{{trans.amountPaid}}</td>
           </tr>
         
       </table>

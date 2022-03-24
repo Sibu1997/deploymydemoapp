@@ -1,34 +1,53 @@
- <table >
+<button type="button" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="left" title="Tooltip on left"[routerLink]="['/index']">Logout</button>
+ <table width="100%">
       <tr align="center">
           <td>Admin Page</td> 
       </tr>
-     <tr>
+     <tr align="center">
      <td> 
-  <table border="2">
+  <table border="2" width="90%">
       <tr  align="center">
         <th colspan="8">Users Details Database</th> 
       </tr>
-<tr> 
-  <th>Name</th>
-  <th>UserName</th>
-  <th>Email</th>
-  <th>CardType</th>
-  <th>Dob</th>
-  <th>CardType</th>
-  <th>Edit</th>
-  <th>Delete</th>
-  </tr>
-  <tbody>
-  <tr *ngFor="let user of users">
-    <td>{{user.name}}</td>
-    <td>{{user.userName}}</td>
-    <td>{{user.email}}</td>
-    <td>{{user.dob}}</td>
-    <td>{{user.cardType}}</td>
-    
-</tr>
-</tbody>
+      <tr  border="2"> 
+        <th>Name</th>
+        <th>UserName</th>
+        <th>Email</th>
+        <th>CardType</th>
+        <th>Dob</th>
+        <th>Status</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+ 
+      <tr  border="2" *ngFor="let user of users">
+        <td>{{user.name}}</td>
+        <td>{{user.userName}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.dob}}</td>
+        <td>{{user.cardType}}</td>
+        <td>{{user.status}}</td>
+        <td><button type="button" (click)="editUser(user);">Edit</button></td>
+        <td><button type="button" (click)="deleteUser(user);">Delete</button></td>
+      </tr>
 </table>
      </td>
      </tr>
 </table>
+
+
+<div *ngIf="editScreen">
+  <table width="400px" align="center" border="2" >
+    <tr align="center"><td colspan="8">Activate User's Account</td></tr>
+    <tr>
+      <td>Activate User : {{editedUser}}</td>
+      <td>ACTIVE <input type="radio" value="ACTIVE" name="status" (click)="selectStatus('ACTIVE');"></td>
+      <td>INACTIVE <input type="radio" value="INACTIVE" name="status" (click)="selectStatus('INACTIVE');"></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><button type="button" (click)="updateUserStatus();">Submit</button></td>
+        <td></td>
+    </tr>
+  </table>
+</div>

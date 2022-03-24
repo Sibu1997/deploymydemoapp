@@ -17,6 +17,7 @@ export class AdminloginComponent implements OnInit {
   adminLogin(){
     console.log(this.admin)
     this.loginadminservice.loginAdmin(this.admin).subscribe(data=>{
+      localStorage.setItem("logged-username", this.admin.adminName);
       alert("login Successfully")
       
       this.router.navigate(['adminpage'])

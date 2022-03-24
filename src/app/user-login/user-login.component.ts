@@ -3,6 +3,8 @@ import { LoginuserService } from '../loginuser.service';
 import { User } from '../user';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+
 @Component({
   selector: 'app-user-login',
   templateUrl: './user-login.component.html',
@@ -10,8 +12,9 @@ import { Router } from '@angular/router';
 })
 export class UserLoginComponent implements OnInit {
   user:User =new User();
+  id:any=undefined;
 public loginForm!: FormGroup
-  constructor(private loginuserservice: LoginuserService, private formBuilder: FormBuilder, private router: Router) { }
+  constructor(private _Activatedroute:ActivatedRoute,private loginuserservice: LoginuserService, private formBuilder: FormBuilder, private router: Router) { }
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group(
@@ -28,7 +31,13 @@ public loginForm!: FormGroup
       localStorage.setItem("logged-username", this.user.userName);
       alert("login Successfully")
       this.loginForm.reset();
-      this.router.navigate(['dashbord'])
+      this.id=this._Activatedroute.snapshot.paramMap.get("id");
+      if(this.id!=undefined && this.id>0){
+        this.router.navigate(['products/buyproduct/'+this.id])
+      }else{
+        this.router.navigate(['dashboard'])
+      }
+      
     },error=>{
       alert(error['error']['message']);
     });

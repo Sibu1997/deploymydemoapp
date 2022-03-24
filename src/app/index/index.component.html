@@ -26,15 +26,19 @@
 
 
 <div class="image">
-<div class="d-flex flex-row">
+<div class="d-flex flex-row"  *ngFor="let product of products">
 <img src="https://i0.wp.com/www.smartprix.com/bytes/wp-content/uploads/2021/03/2-1.jpg?fit=2000%2C1335&ssl=1 " style="height:300px; width:300px; padding:20px;">
 <div style="margin-top:50px;">
-<p>PRODUCT NAME:OPPO </p>
-<p>PRODUCT DETAILS: F 19 </p>
-<p>PRODUCT COST:15,000/- </p>
-<button [routerLink]="['/login']">BUYNOW</button>
+  <p>{{product.productName}}</p>
+  <p>{{product.productDescription}}</p>
+  <p>Cost:Rs. {{product.productPrice}} </p>
+<!--<button [routerLink]="['/login']">BUYNOW</button> -->
+<button [routerLink]="'login/'+product.id">Buy Now</button>
 </div>
 </div>
+
+
+
 <p style="font-size: 20px; margin-left:100px; margin-top:50px;">ELIGIBILITY</p>
 <a style="font-size: 20px; text-align: center;text-decoration: underline;" [routerLink]="['/terms']">Terms and Conditions</a>
 <div style="font-size: 20px; margin-left:100px; margin-top:180px;">

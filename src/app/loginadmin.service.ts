@@ -15,6 +15,6 @@ export class LoginadminService {
     console.log(admin)
     return this.httpClient.post("http://localhost:8081/admin/login",admin);
   }
-
+ 
 
 }

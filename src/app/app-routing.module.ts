@@ -12,12 +12,13 @@ import { TermsconditionComponent } from './termscondition/termscondition.compone
 import { UserLoginComponent } from './user-login/user-login.component';
 
 const routes: Routes = [
+  { path: 'index/login/:id' , component: UserLoginComponent},
   { path: 'login' , component: UserLoginComponent},
   { path: 'register' , component: RegisterUserComponent},
   { path: 'products' , component: ProductsComponent},
   { path: 'products/buyproduct/:id' , component: BuyproductComponent},
-  { path: 'index' , component: IndexComponent},
-  { path: 'dashbord' , component: DashobrdComponent},
+  { path: 'index' , component: IndexComponent},  
+  { path: 'dashboard' , component: DashobrdComponent},
   { path: 'adminpage' , component: AdminpageComponent},
   { path: 'terms' , component: TermsconditionComponent},
   { path: 'adminlogin' , component: AdminloginComponent},
